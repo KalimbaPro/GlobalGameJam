@@ -1041,7 +1041,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &954242851
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1058,7 +1058,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!61 &954242852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1198,6 +1198,7 @@ MonoBehaviour:
   anim: {fileID: 954242851}
   player: {fileID: 954242850}
   myHealth: 100
+  currentHealth: 0
 --- !u!4 &954242857
 Transform:
   m_ObjectHideFlags: 0
@@ -1257,14 +1258,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3670a6782fac8f43a56b4da6b748fb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartCoolDown: 0.1
+  StartCoolDown: 0.75
   attackPos: {fileID: 1250837087}
   whatIsEnemies:
     serializedVersion: 2
     m_Bits: 256
   attackRange: 1.25
-  damage: 35
-  anim: {fileID: 954242851}
+  QuickAttackDamage: 30
+  HeavyAttackDamage: 100
+  attack: {fileID: 954242851}
   swordNoise: {fileID: 954242861}
 --- !u!82 &954242861
 AudioSource:
@@ -3280,6 +3282,10 @@ PrefabInstance:
     - target: {fileID: 5194212975778747165, guid: 8c196fb1fdfbc9b48a686eac88592db1, type: 3}
       propertyPath: m_Name
       value: Bart
+      objectReference: {fileID: 0}
+    - target: {fileID: 5194212975799283612, guid: 8c196fb1fdfbc9b48a686eac88592db1, type: 3}
+      propertyPath: health
+      value: 600
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8c196fb1fdfbc9b48a686eac88592db1, type: 3}
