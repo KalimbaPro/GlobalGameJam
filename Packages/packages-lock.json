@@ -39,21 +39,12 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.2d.psdimporter": {
-<<<<<<< HEAD
       "version": "6.0.6",
       "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.2d.animation": "7.0.8",
         "com.unity.2d.common": "6.0.5",
-=======
-      "version": "6.0.7",
-      "depth": 1,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.2d.animation": "7.0.9",
-        "com.unity.2d.common": "6.0.6",
->>>>>>> c798237c36fc16aa0caf61e5705336c83bd54090
         "com.unity.2d.sprite": "1.0.0"
       },
       "url": "https://packages.unity.com"
@@ -83,11 +74,7 @@
       "dependencies": {}
     },
     "com.unity.2d.tilemap.extras": {
-<<<<<<< HEAD
       "version": "2.2.3",
-=======
-      "version": "2.2.4",
->>>>>>> c798237c36fc16aa0caf61e5705336c83bd54090
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -130,7 +117,6 @@
       "dependencies": {
         "com.unity.2d.animation": "7.0.9",
         "com.unity.2d.pixel-perfect": "5.0.3",
-<<<<<<< HEAD
         "com.unity.2d.psdimporter": "6.0.6",
         "com.unity.2d.sprite": "1.0.0",
         "com.unity.2d.spriteshape": "7.0.6",
@@ -140,17 +126,6 @@
     },
     "com.unity.ide.rider": {
       "version": "3.0.16",
-=======
-        "com.unity.2d.psdimporter": "6.0.7",
-        "com.unity.2d.sprite": "1.0.0",
-        "com.unity.2d.spriteshape": "7.0.6",
-        "com.unity.2d.tilemap": "1.0.0",
-        "com.unity.2d.tilemap.extras": "2.2.4"
-      }
-    },
-    "com.unity.ide.rider": {
-      "version": "3.0.18",
->>>>>>> c798237c36fc16aa0caf61e5705336c83bd54090
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -159,11 +134,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-<<<<<<< HEAD
       "version": "2.0.16",
-=======
-      "version": "2.0.17",
->>>>>>> c798237c36fc16aa0caf61e5705336c83bd54090
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -193,11 +164,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.services.core": {
-<<<<<<< HEAD
       "version": "1.6.0",
-=======
-      "version": "1.7.0",
->>>>>>> c798237c36fc16aa0caf61e5705336c83bd54090
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -249,11 +216,7 @@
       }
     },
     "com.unity.visualscripting": {
-<<<<<<< HEAD
       "version": "1.7.8",
-=======
-      "version": "1.8.0",
->>>>>>> c798237c36fc16aa0caf61e5705336c83bd54090
       "depth": 0,
       "source": "registry",
       "dependencies": {
