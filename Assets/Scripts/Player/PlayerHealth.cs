@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if(instance != null)
         {
-            Debug.Log("PlayerHealth à pété");
+            Debug.Log("PlayerHealth");
             return;
         }
 
