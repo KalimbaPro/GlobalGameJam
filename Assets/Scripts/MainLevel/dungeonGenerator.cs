@@ -26,15 +26,17 @@ public class dungeonGenerator : MonoBehaviour
         public int cell = -1;
     }
 
-    public Vector2 size;
+    public Vector2Int size;
     public int startPos = 0;
     public GameObject room;
     public Vector2 offset;
 
     public bool[] firstRoom;
     List<Cell> board;
+    List<Cell> topBoard;
     private void Awake()
     {
+        int topConnector = Random.Range(0, 1);
         gridGen();
     }
     // Start is called before the first frame update
