@@ -589,6 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -1571,7 +1572,7 @@ CanvasRenderer:
   m_CullTransparentMesh: 1
 --- !u!95 &624381525
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1588,7 +1589,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!114 &680943296 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2786975296796218859, guid: e7266d26e459db84ebba4ec67bf716c5, type: 3}
@@ -2238,7 +2239,7 @@ GameObject:
   m_IsActive: 1
 --- !u!95 &954242851
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2255,7 +2256,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!61 &954242852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2344,7 +2345,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: -1395731419, guid: 2a918d7da9d46344e80b03d0e7618d2f, type: 3}
+  m_Sprite: {fileID: -603009096, guid: 2a918d7da9d46344e80b03d0e7618d2f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2428,7 +2429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CategoryHash: 0
   m_labelHash: 0
-  m_SpriteKey: -105676010
+  m_SpriteKey: 0.92734754
 --- !u!114 &954242859
 MonoBehaviour:
   m_ObjectHideFlags: 0

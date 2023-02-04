@@ -333,6 +333,27 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: -1624416268, guid: 2efac25d16cc019498c4da42d3f5b846, type: 3}
     m_FromMain: 1
     m_EntryOverrideCount: 12
+  - m_Name: QuickAttack
+    m_Hash: 342686914
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: char_blue_1_13
+      m_Hash: 391150034
+      m_Sprite: {fileID: -603009096, guid: 2a918d7da9d46344e80b03d0e7618d2f, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1505336310, guid: 2efac25d16cc019498c4da42d3f5b846, type: 3}
+    - m_Name: char_blue_1_14
+      m_Hash: 154463345
+      m_Sprite: {fileID: -1805052602, guid: 2a918d7da9d46344e80b03d0e7618d2f, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -664124321, guid: 2efac25d16cc019498c4da42d3f5b846, type: 3}
+    - m_Name: char_blue_1_15
+      m_Hash: 1043586279
+      m_Sprite: {fileID: -1537022049, guid: 2a918d7da9d46344e80b03d0e7618d2f, type: 3}
+      m_FromMain: 1
+      m_SpriteOverride: {fileID: -1564301815, guid: 2efac25d16cc019498c4da42d3f5b846, type: 3}
+    m_FromMain: 1
+    m_EntryOverrideCount: 3
   - m_Name: PP
     m_Hash: -1878450593
     m_CategoryList: []
