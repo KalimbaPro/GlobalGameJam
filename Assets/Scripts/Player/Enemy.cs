@@ -9,8 +9,10 @@ public class Enemy : MonoBehaviour
     public GameObject enemy;
     public LayerMask WhatIsPlayer;
     public Transform attackPos;
+    public float seeRange;
     public float attackRange;
     public float TimeBetweenAttack;
+    public float speed;
     public AudioSource strikeNoise;
 
     private Animator anim;
@@ -25,17 +27,29 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Collider2D[] playersInRange = Physics2D.OverlapCircleAll(attackPos.position, seeRange, WhatIsPlayer);
+        if (playersInRange.Length > 0) {
+            if (playersInRange[0].transform.position.x > transform.position.x) {
+                transform.GetComponent<SpriteRenderer>().flipX = false;
+            } else {
+                transform.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            transform.position = Vector2.MoveTowards(transform.position, playersInRange[0].transform.position, speed * Time.deltaTime);
+        }
         if (health <= 0)
         {
             StartCoroutine(DeathTime());
         }
-        if (attack == true)
-        {
-            anim.SetBool("isAttack", true);
-            StartCoroutine(AtkTime());
-            attack = false; 
-            StartCoroutine(WaitforAttack());
+        Collider2D[] playerInAttackRange = Physics2D.OverlapCircleAll(attackPos.position, attackRange, WhatIsPlayer);
+        if (playerInAttackRange.Length > 0) {
+            if (attack == true) {
+                anim.SetBool("isAttack", true);
+                StartCoroutine(AtkTime());
+                attack = false; 
+                StartCoroutine(WaitforAttack());
+            }
         }
+        Physics2D.IgnoreLayerCollision(8, 9);
     }
 
     IEnumerator AtkTime()
