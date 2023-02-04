@@ -19,7 +19,8 @@ public class PlayerAttack : MonoBehaviour
     private bool Attack = false;
 
     public Animator attack;
-    public AudioSource swordNoise;
+    public AudioSource quickattacknoise;
+    public AudioSource heavyattacknoise;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
                 damage = QuickAttackDamage;
                 attack.SetBool("isAttack", true);
                 attack.SetBool("isHeavy", false);
+                quickattacknoise.Play();
                 waitTimeBefore = 0.05f;
                 waitTimeAfter = 0.2f;
                 CoolDownValue = StartCoolDownQuick;
@@ -50,12 +52,12 @@ public class PlayerAttack : MonoBehaviour
                 damage = HeavyAttackDamage;
                 attack.SetBool("isAttack", true);
                 attack.SetBool("isHeavy", true);
+                heavyattacknoise.Play();
                 waitTimeBefore = 0.35f;
                 waitTimeAfter = 0.2f;
                 CoolDownValue = StartCoolDownHeavy; ;
             }
             if (Attack) {
-                swordNoise.Play();
                 StartCoroutine(AtkTime(SwordHitBox, waitTimeBefore, waitTimeAfter));
                 CoolDown = CoolDownValue;
             }

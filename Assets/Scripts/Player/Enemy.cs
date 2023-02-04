@@ -14,6 +14,7 @@ public class Enemy : MonoBehaviour
     public float TimeBetweenAttack;
     public float speed;
     public AudioSource strikeNoise;
+    public AudioSource deathnoise;
 
     private Animator anim;
     private bool attack = true;
@@ -73,6 +74,7 @@ public class Enemy : MonoBehaviour
     IEnumerator DeathTime()
     {
         anim.SetBool("isDead", true);
+        deathnoise.Play();
         yield return new WaitForSeconds(0.70f);
         Destroy(enemy);
     }
