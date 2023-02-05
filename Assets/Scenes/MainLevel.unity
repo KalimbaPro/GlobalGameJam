@@ -776,7 +776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1060,6 +1060,55 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2db177aad45ca1b41a7b9133831df4e2, type: 3}
+--- !u!1 &379157575 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 938376426789979388, guid: 2db177aad45ca1b41a7b9133831df4e2, type: 3}
+  m_PrefabInstance: {fileID: 379157574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &379157576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 938376426789979381, guid: 2db177aad45ca1b41a7b9133831df4e2, type: 3}
+  m_PrefabInstance: {fileID: 379157574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379157575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &379157577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 938376426789979378, guid: 2db177aad45ca1b41a7b9133831df4e2, type: 3}
+  m_PrefabInstance: {fileID: 379157574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379157575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3670a6782fac8f43a56b4da6b748fb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &379157578 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 938376426789979385, guid: 2db177aad45ca1b41a7b9133831df4e2, type: 3}
+  m_PrefabInstance: {fileID: 379157574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379157575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a881a4156c5ba6409190e3cf57ed96c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &379157579 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 938376426789979382, guid: 2db177aad45ca1b41a7b9133831df4e2, type: 3}
+  m_PrefabInstance: {fileID: 379157574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379157575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2e0d5cdfe919ae4aacde9519791a971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &466700590
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,7 +1348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2628,15 +2677,15 @@ PrefabInstance:
     - target: {fileID: 2786975296796218859, guid: e7266d26e459db84ebba4ec67bf716c5, type: 3}
       propertyPath: attack
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157577}
     - target: {fileID: 2786975296796218859, guid: e7266d26e459db84ebba4ec67bf716c5, type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157579}
     - target: {fileID: 2786975296796218859, guid: e7266d26e459db84ebba4ec67bf716c5, type: 3}
       propertyPath: movement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157578}
     - target: {fileID: 3588487606349811308, guid: e7266d26e459db84ebba4ec67bf716c5, type: 3}
       propertyPath: m_Name
       value: Dayana (Orc)
@@ -4664,7 +4713,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec77a29f5a7f26941b6fc9a3d8a787ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerLib: {fileID: 0}
+  playerLib: {fileID: 379157576}
   PPHud: {fileID: 976469786}
   characList:
   - {fileID: 7108339969198208228, guid: ae48f145f70c1fe42902d94994ec12b4, type: 3}
@@ -4689,7 +4738,7 @@ MonoBehaviour:
   yesButton: {fileID: 1104249093}
   noButton: {fileID: 1586170179}
   continueButton: {fileID: 1055121788}
-  attack: {fileID: 0}
+  attack: {fileID: 379157577}
 --- !u!114 &1655612208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4724,6 +4773,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 938376426789979383, guid: 2db177aad45ca1b41a7b9133831df4e2, type: 3}
   m_PrefabInstance: {fileID: 379157574}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1841984439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379157575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 775351e284438ce46a19ca5bcf969188, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLib: {fileID: 379157576}
+  PPHud: {fileID: 976469786}
+  PPsprite: {fileID: 0}
 --- !u!1 &1878470373
 GameObject:
   m_ObjectHideFlags: 0
@@ -5086,15 +5150,15 @@ PrefabInstance:
     - target: {fileID: 3905161559543063228, guid: 14ee48cecd0a74d469e9996ded8ed369, type: 3}
       propertyPath: attack
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157577}
     - target: {fileID: 3905161559543063228, guid: 14ee48cecd0a74d469e9996ded8ed369, type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157579}
     - target: {fileID: 3905161559543063228, guid: 14ee48cecd0a74d469e9996ded8ed369, type: 3}
       propertyPath: movement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157578}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14ee48cecd0a74d469e9996ded8ed369, type: 3}
 --- !u!4 &2038169996 stripped
@@ -5172,15 +5236,15 @@ PrefabInstance:
     - target: {fileID: 7603774273440736854, guid: 2df863666d5dae24596ad551155ab0ba, type: 3}
       propertyPath: attack
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157577}
     - target: {fileID: 7603774273440736854, guid: 2df863666d5dae24596ad551155ab0ba, type: 3}
       propertyPath: health
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157579}
     - target: {fileID: 7603774273440736854, guid: 2df863666d5dae24596ad551155ab0ba, type: 3}
       propertyPath: movement
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 379157578}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df863666d5dae24596ad551155ab0ba, type: 3}
 --- !u!4 &2095118245 stripped
