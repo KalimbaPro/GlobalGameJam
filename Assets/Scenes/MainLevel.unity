@@ -2022,8 +2022,8 @@ MonoBehaviour:
   - {fileID: 2095118245}
   - {fileID: 2038169996}
   - {fileID: 1392068004}
-  size: {x: 10, y: 10}
-  startPos: 10
+  size: {x: 5, y: 5}
+  startPos: 8
   room: {fileID: 7001947538984909877, guid: 62004a214b7668d45bc2168717a37881, type: 3}
   offset: {x: 54, y: 38}
   firstRoom: 01010101

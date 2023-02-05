@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Linq;
 public class dungeonGenerator : MonoBehaviour
 {
     public static List<Transform> WomenSpawn = new List<Transform>();
@@ -19,6 +19,7 @@ public class dungeonGenerator : MonoBehaviour
     {
         public bool generated = false;
         public bool[] status = new bool[4];
+        public bool boss = false;
     }
     public class Neighbor
     {
@@ -32,31 +33,154 @@ public class dungeonGenerator : MonoBehaviour
     public Vector2 offset;
 
     public bool[] firstRoom;
-    List<Cell> board;
+    List<Cell> midBoard;
     List<Cell> topBoard;
+    List<Cell> botBoard;
+    List<Cell> rightBoard;
+
     private void Awake()
     {
-        int topConnector = Random.Range(0, 1);
-        gridGen();
+        startPos = (size.y / 2) * size.x;
+        gridGen(ref midBoard, startPos);
+        int topConnector = Random.Range(0, size.x - 1);
+        while (midBoard[topConnector].generated == false)
+           topConnector = Random.Range(0, size.x - 1);
+
+        int botConnector = Random.Range(0, size.x - 1);
+        while (midBoard[(size.y - 1) * size.x + botConnector].generated == false)
+            botConnector = Random.Range(0, size.x - 1);
+
+        int rightConnector = Random.Range(0, size.y - 1);
+        while (midBoard[rightConnector * size.y + size.x - 1].generated == false)
+            rightConnector = Random.Range(0, size.y - 1);
+
+        gridGen(ref topBoard, (size.y - 1) * size.x + topConnector);
+        gridGen(ref botBoard, botConnector);
+        gridGen(ref rightBoard, rightConnector * size.y);
+
+        midBoard[topConnector].status[TOP] = true;
+        midBoard[(size.y - 1) * size.x + botConnector].status[BOT] = true;
+        midBoard[rightConnector * size.y + size.x - 1].status[RIGHT] = true;
+
+        // mid
+        var distances = Dijkstra(midBoard, startPos);
+        int farthestRoom = getFarthestRoom(distances);
+        midBoard[farthestRoom].boss = true;
+        midBoard[farthestRoom].status = new bool[] {false, false, false, false};
+
+        // top
+        distances = Dijkstra(topBoard, (size.y - 1) * size.x + topConnector);
+        farthestRoom = getFarthestRoom(distances);
+        topBoard[farthestRoom].boss = true;
+        topBoard[farthestRoom].status = new bool[] { false, false, false, false };
+
+        // bot
+        distances = Dijkstra(botBoard, botConnector);
+        farthestRoom = getFarthestRoom(distances);
+        botBoard[farthestRoom].boss = true;
+        botBoard[farthestRoom].status = new bool[] { false, false, false, false };
+
+        // right
+        distances = Dijkstra(rightBoard, rightConnector * size.y);
+        farthestRoom = getFarthestRoom(distances);
+        rightBoard[farthestRoom].boss = true;
+        rightBoard[farthestRoom].status = new bool[] { false, false, false, false };
+
+        dungeonGen(midBoard, new Vector2(0, 0));
+        dungeonGen(topBoard, new Vector2(0, size.y * offset.y));
+        dungeonGen(botBoard, new Vector2(0, -size.y * offset.y));
+        dungeonGen(rightBoard, new Vector2(size.x * offset.x, 0));
     }
     // Start is called before the first frame update
     void Start()
     {
-        //spawnWomen();
+
     }
 
-    void spawnWomen()
+    int getFarthestRoom(List<int> distances)
     {
-        foreach (var woman in Women)
+        int max = distances.Max();
+        List<int> farthest = new List<int>();
+        for (int i = 0; i < distances.Count; ++i)
+            if (distances[i] == max)
+                farthest.Add(i);
+        return farthest[Random.Range(0, farthest.Count - 1)];
+    }
+
+    private class Node
+    {
+        public int position;
+        public int distance;
+        public Node(int position, int distance)
         {
-            int index = Random.Range(0, WomenSpawn.Count);
-            var pos = WomenSpawn[index];
-            woman.position = pos.position;
-            WomenSpawn.RemoveAt(index);
+            this.position = position;
+            this.distance = distance;
         }
     }
 
-    void dungeonGen()
+    List<int> Dijkstra(List<Cell> board, int startPos)
+    {
+        List<int> dist_list = new List<int>(size.x * size.y);
+        List<bool> visited = new List<bool>(size.x * size.y);
+        for (int i = 0; i < (size.x * size.y); i++)
+        {
+            dist_list.Add(int.MaxValue);
+            visited.Add(false);
+        }
+        dist_list[startPos] = 0;
+        Queue<Node> queue = new Queue<Node>();
+        queue.Enqueue(new Node(startPos, 0));
+        while (queue.Count > 0)
+        {
+            Node node = queue.Dequeue();
+            int position = node.position;
+            int x = position % size.y;
+            int y = position / size.y;
+            int distance = node.distance;
+
+            if (visited[position])
+                continue;
+
+            visited[position] = true;
+            
+            // top
+            if (board[position].status[TOP])
+                UpdateDistance(queue, x, y - 1, distance + 1, dist_list);
+
+            // bot
+            if (board[position].status[BOT])
+                UpdateDistance(queue, x, y + 1, distance + 1, dist_list);
+
+            // left
+            if (board[position].status[LEFT])
+                UpdateDistance(queue, x - 1, y, distance + 1, dist_list);
+
+            // right
+            if (board[position].status[RIGHT])
+                UpdateDistance(queue, x + 1, y, distance + 1, dist_list);
+        }
+
+        for (int i = 0; i < dist_list.Count; ++i)
+        {
+            if (dist_list[i] == int.MaxValue)
+                dist_list[i] = -1;
+        }
+        return dist_list;
+    }
+
+    void UpdateDistance(Queue<Node> queue, int x, int y, int distance, List<int> dist_list)
+    {
+        if (x >= 0 && x < size.x && y >= 0 && y < size.y)
+        {
+            if (distance < dist_list[x + y * size.x])
+            {
+                dist_list[x + y * size.x] = distance;
+                queue.Enqueue(new Node(x + y * size.x, distance));
+            }
+        }
+    }
+
+    void dungeonGen(List<Cell> board, Vector2 pos)
     {
 
         for (int i = 0; i < size.x; i++)
@@ -65,14 +189,14 @@ public class dungeonGenerator : MonoBehaviour
             {
                 if (board[Mathf.FloorToInt(i + j * size.x)].generated)
                 {
-                    var newRoom = Instantiate(room, new Vector3((i - (startPos % size.x)) * offset.x, -(j - Mathf.FloorToInt(startPos / size.x)) * offset.y, 0), Quaternion.identity, transform).GetComponent<RoomBehavior>();
-                    newRoom.UpdateRoom(board[Mathf.FloorToInt(i + j * size.x)].status);
+                    var newRoom = Instantiate(room, new Vector3((i - (startPos % size.x)) * offset.x + pos.x, -(j - Mathf.FloorToInt(startPos / size.x)) * offset.y + pos.y, 0), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+                    newRoom.UpdateRoom(board[Mathf.FloorToInt(i + j * size.x)].status, board[Mathf.FloorToInt(i + j * size.x)].boss);
                 }
             }
         }
     }
 
-    void gridGen()
+    void gridGen(ref List<Cell> board, int startPos)
     {
         board = new List<Cell>();
         for (int i = 0; i < (size.x * size.y); i++)
@@ -90,7 +214,7 @@ public class dungeonGenerator : MonoBehaviour
             k++;
 
 
-            List<Neighbor> neighbors = getPossibleDir(currentCell);
+            List<Neighbor> neighbors = getPossibleDir(currentCell, board);
             if (board[currentCell].generated)
             {
                 if (isEnd(neighbors))
@@ -144,8 +268,6 @@ public class dungeonGenerator : MonoBehaviour
                 board[currentCell].generated = true;
             }
         }
-
-        dungeonGen();
     }
 
     bool isEnd(List<Neighbor> neighbors)
@@ -157,7 +279,7 @@ public class dungeonGenerator : MonoBehaviour
     }
 
 
-    List<Neighbor> getPossibleDir(int cell)
+    List<Neighbor> getPossibleDir(int cell, List<Cell> board)
     {
         List<Neighbor> dirs = new List<Neighbor>();
         Cell c = board[cell];
@@ -210,7 +332,7 @@ public class dungeonGenerator : MonoBehaviour
             T.type = WALL;
         }
         dirs.Add(T);
-        //print("add T: " + dirs[0].type);
+        // print("add T: " + dirs[0].type);
 
         //check RIGHT
         Neighbor R = new Neighbor();
@@ -249,7 +371,7 @@ public class dungeonGenerator : MonoBehaviour
             R.type = WALL;
         }
         dirs.Add(R);
-        //print("add R: " + dirs[0].type + " " + dirs[1].type);
+        // print("add R: " + dirs[0].type + " " + dirs[1].type);
 
         //check BOT
         Neighbor B = new Neighbor();
@@ -293,7 +415,7 @@ public class dungeonGenerator : MonoBehaviour
             B.type = WALL;
         }
         dirs.Add(B);
-        //print("add B: " + dirs[0].type + " " + dirs[1].type + " " + dirs[2].type);
+        // print("add B: " + dirs[0].type + " " + dirs[1].type + " " + dirs[2].type);
 
         //check LEFT
         Neighbor L = new Neighbor();
@@ -332,7 +454,7 @@ public class dungeonGenerator : MonoBehaviour
             L.type = WALL;
         }
         dirs.Add(L);
-        //print("add L: " + dirs[0].type + " " + dirs[1].type + " " + dirs[2].type + " " + dirs[3].type);
+        // print("add L: " + dirs[0].type + " " + dirs[1].type + " " + dirs[2].type + " " + dirs[3].type);
 
         return dirs;
     }
