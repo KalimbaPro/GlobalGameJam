@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1642287636830521471}
   - component: {fileID: 1642287636830521456}
   - component: {fileID: 1642287636830521457}
-  - component: {fileID: 1642287636830521467}
   - component: {fileID: 8438382350185325502}
   m_Layer: 8
   m_Name: Sprite
@@ -103,18 +102,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7353a5b93b5b0d1499a8005ae60978be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
-  power: 0
+  health: 5
+  power: 5
   enemy: {fileID: 1642287637152054380}
   WhatIsPlayer:
     serializedVersion: 2
     m_Bits: 0
-  attackPos: {fileID: 0}
-  seeRange: 0
-  attackRange: 0
-  TimeBetweenAttack: 0
-  speed: 0
-  strikeNoise: {fileID: 0}
+  attackPos: {fileID: 1642287638227939429}
+  seeRange: 5
+  attackRange: 5
+  TimeBetweenAttack: 3
+  speed: 1
+  strikeNoise: {fileID: 8438382350185325502}
+  deathNoise: {fileID: 0}
+  hitNoise: {fileID: 0}
 --- !u!50 &1642287636830521471
 Rigidbody2D:
   serializedVersion: 4
@@ -182,22 +183,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1642287636830521467
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1642287636830521458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4ba35e5d68d1944be288b598e7e318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  waypointList:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!82 &8438382350185325502
 AudioSource:
   m_ObjectHideFlags: 0
@@ -402,4 +387,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09afe5ee23cd47242a645ed429003713, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  liza: {fileID: 0}
+  liza: {fileID: 7694552456166355186}

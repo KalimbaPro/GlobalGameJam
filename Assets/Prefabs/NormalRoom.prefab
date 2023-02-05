@@ -47,6 +47,7 @@ MonoBehaviour:
   contentList:
   - {fileID: 5413457928240118102, guid: 9ea4765a44be4f1408597ffae456b83a, type: 3}
   - {fileID: 7488254861520887833, guid: 3934b2c832e7dfd4395a26fa896b102c, type: 3}
+  - {fileID: 7488254861520887833, guid: ee3de4130408519499f426ee157a1588, type: 3}
 --- !u!1 &7001947537586173690
 GameObject:
   m_ObjectHideFlags: 0
