@@ -66,21 +66,25 @@ public class dungeonGenerator : MonoBehaviour
         var distances = Dijkstra(midBoard, startPos);
         int farthestRoom = getFarthestRoom(distances);
         midBoard[farthestRoom].boss = true;
+        midBoard[farthestRoom].status = new bool[] {false, false, false, false};
 
         // top
         distances = Dijkstra(topBoard, (size.y - 1) * size.x + topConnector);
         farthestRoom = getFarthestRoom(distances);
         topBoard[farthestRoom].boss = true;
+        topBoard[farthestRoom].status = new bool[] { false, false, false, false };
 
         // bot
         distances = Dijkstra(botBoard, botConnector);
         farthestRoom = getFarthestRoom(distances);
         botBoard[farthestRoom].boss = true;
+        botBoard[farthestRoom].status = new bool[] { false, false, false, false };
 
         // right
         distances = Dijkstra(rightBoard, rightConnector * size.y);
         farthestRoom = getFarthestRoom(distances);
         rightBoard[farthestRoom].boss = true;
+        rightBoard[farthestRoom].status = new bool[] { false, false, false, false };
 
         dungeonGen(midBoard, new Vector2(0, 0));
         dungeonGen(topBoard, new Vector2(0, size.y * offset.y));
@@ -185,11 +189,8 @@ public class dungeonGenerator : MonoBehaviour
             {
                 if (board[Mathf.FloorToInt(i + j * size.x)].generated)
                 {
-                    var newRoom = Instantiate(room, new Vector3((i - (startPos % size.x)) * offset.x + pos.x, -(j - Mathf.FloorToInt(startPos / size.x)) * offset.y + pos.y, 0), Quaternion.identity, transform);
-                    var rbahavior = newRoom.GetComponent<RoomBehavior>();
-                    rbahavior.UpdateRoom(board[Mathf.FloorToInt(i + j * size.x)].status);
-                    var rgen = newRoom.GetComponentsInChildren<RoomGen>();
-                    rgen[0].gen(board[Mathf.FloorToInt(i + j * size.x)].boss);
+                    var newRoom = Instantiate(room, new Vector3((i - (startPos % size.x)) * offset.x + pos.x, -(j - Mathf.FloorToInt(startPos / size.x)) * offset.y + pos.y, 0), Quaternion.identity, transform).GetComponent<RoomBehavior>();
+                    newRoom.UpdateRoom(board[Mathf.FloorToInt(i + j * size.x)].status, board[Mathf.FloorToInt(i + j * size.x)].boss);
                 }
             }
         }
