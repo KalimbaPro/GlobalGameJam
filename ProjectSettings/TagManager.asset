@@ -9,6 +9,8 @@ TagManager:
   - Elf
   - Orc
   - Barbarian
+  - OneWayPlatform
+  - InteractUIWrapper
   layers:
   - Default
   - TransparentFX
