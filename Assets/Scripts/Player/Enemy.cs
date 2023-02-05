@@ -74,7 +74,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator DeathTime()
     {
-        // deathNoise.Play();
+        deathNoise.Play();
         anim.SetBool("isDead", true);
         yield return new WaitForSeconds(0.70f);
         Destroy(enemy);
@@ -95,7 +95,7 @@ public class Enemy : MonoBehaviour
     }
     IEnumerator HitTime()
     {
-        // hitNoise.Play();
+        hitNoise.Play();
         yield return new WaitForSeconds(0.80f);
 
         anim.SetBool("isDmg", false);
