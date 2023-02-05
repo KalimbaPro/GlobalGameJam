@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 1234697239306520357}
   - component: {fileID: 1234697239306520356}
   - component: {fileID: 1234697239306520359}
-  - component: {fileID: 1234697239306520358}
   - component: {fileID: 1234697239306520354}
   - component: {fileID: 1234697239306520355}
   - component: {fileID: 1234697239306520352}
@@ -315,7 +314,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &1234697239306520359
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -332,23 +331,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!114 &1234697239306520358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234697239306520381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4ba35e5d68d1944be288b598e7e318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  waypointList:
-  - {fileID: 0}
-  - {fileID: 0}
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &1234697239306520354
 AudioSource:
   m_ObjectHideFlags: 0
@@ -359,7 +342,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3980898441516324954, guid: 91b17dc718573d74481a4b7fb5322c62, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 1dd4b7edb09be724793da733d424bdf1, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 076328f7bf39d894c992768570588e8d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -455,7 +438,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3980898441516324954, guid: 91b17dc718573d74481a4b7fb5322c62, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c9a0e142dd395124e82f0001edebf5db, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 2979b57c84a184848a81f19058acff83, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -551,7 +534,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3980898441516324954, guid: 91b17dc718573d74481a4b7fb5322c62, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 78f891e4cf95a94438ca90c2592eb8dd, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 87eed6b3099b6d94ba7d970237739516, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -725,7 +708,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &3617377274904057897
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -742,7 +725,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6875977971431216423
 GameObject:
   m_ObjectHideFlags: 0
@@ -831,7 +814,7 @@ SpriteRenderer:
   m_SpriteSortPoint: 0
 --- !u!95 &8073460957491010205
 Animator:
-  serializedVersion: 5
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -848,7 +831,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8863761876803052105
 GameObject:
   m_ObjectHideFlags: 0

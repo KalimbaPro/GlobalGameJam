@@ -12,6 +12,10 @@ public class WomenProprity : MonoBehaviour
 
     public void UpgradeProperty()
     {
+
+        attack = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerAttack>();
+        health = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerHealth>();
+        movement = GameObject.FindGameObjectsWithTag("Player")[0].GetComponent<PlayerMovement>();
         Debug.Log("ccououc");
         if(type == "orc")
         {

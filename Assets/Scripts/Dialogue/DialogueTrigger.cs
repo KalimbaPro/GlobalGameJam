@@ -6,8 +6,6 @@ public class DialogueTrigger : MonoBehaviour
     public Sprite head;
     
     public Dialogue dialogue;
-    
-    public GameObject interactUI;
 
     public WomenProprity property;
 
@@ -27,7 +25,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if(collision.CompareTag("Player") && isReading == false)
         {
-            interactUI.SetActive(true);
+            GameObject.FindGameObjectsWithTag("InteractUIWrapper")[0].transform.GetChild(0).gameObject.SetActive(true);
             isInRange = true;
         }
     }
@@ -37,7 +35,7 @@ public class DialogueTrigger : MonoBehaviour
         if(collision.CompareTag("Player"))
         {
             isInRange = false;
-            interactUI.SetActive(false);
+            GameObject.FindGameObjectsWithTag("InteractUIWrapper")[0].transform.GetChild(0).gameObject.SetActive(false);
         }
     }
 
