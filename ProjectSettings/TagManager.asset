@@ -11,6 +11,8 @@ TagManager:
   - Barbarian
   - OneWayPlatform
   - InteractUIWrapper
+  - BossRoom
+  - BossSpawnPoint
   layers:
   - Default
   - TransparentFX
