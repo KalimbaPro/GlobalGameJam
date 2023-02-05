@@ -6,7 +6,7 @@ public class RoomBehavior : MonoBehaviour
 {
     public GameObject[] walls;
 
-    public void UpdateRoom(bool[] status, bool boss)
+    public void UpdateRoom(bool[] status)
     {
         for (int i = 0; i < status.Length; ++i)
         {
