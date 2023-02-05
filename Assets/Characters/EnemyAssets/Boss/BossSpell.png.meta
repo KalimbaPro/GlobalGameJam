@@ -101,6 +101,7 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+>>>>>>> c798237c36fc16aa0caf61e5705336c83bd54090
   spriteSheet:
     serializedVersion: 2
     sprites: []

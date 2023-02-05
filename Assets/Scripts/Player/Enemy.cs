@@ -8,15 +8,7 @@ public class Enemy : MonoBehaviour
     public int power;
     public GameObject enemy;
     public LayerMask WhatIsPlayer;
-
     public Transform attackPos;
-    public Transform spellLeftPos;
-    public Transform spellRightPos;
-    public GameObject spellLeft;
-    public GameObject SpellRight;
-
-
-    public bool isBoss;
     public float seeRange;
     public float attackRange;
     public float TimeBetweenAttack;
@@ -59,43 +51,7 @@ public class Enemy : MonoBehaviour
                 StartCoroutine(WaitforAttack());
             }
         }
-        if (isBoss)
-        {
-            Collider2D[] playerInSpellRangeLeft = Physics2D.OverlapCircleAll(spellLeftPos.position, 0.5f, WhatIsPlayer);
-            Collider2D[] playerInSpellRangeRight = Physics2D.OverlapCircleAll(spellRightPos.position, 0.5f, WhatIsPlayer);
-            if (playerInSpellRangeLeft.Length > 0 || playerInSpellRangeRight.Length > 0)
-            {
-                if (attack == true)
-                {
-                    anim.SetBool("isSpell", true);
-                    spellLeft.SetActive(true);
-                    SpellRight.SetActive(true);
-                    StartCoroutine(SpellTime());
-                    attack = false;
-                    StartCoroutine(WaitforAttack());
-                }
-            }
-        }
         Physics2D.IgnoreLayerCollision(8, 9);
-    }
-
-    IEnumerator SpellTime()
-    {
-        yield return new WaitForSeconds(1f);
-        Collider2D[] MonsterHitBox1 = Physics2D.OverlapCircleAll(spellLeftPos.position, 0.5f, WhatIsPlayer);
-        Collider2D[] MonsterHitBox2 = Physics2D.OverlapCircleAll(spellRightPos.position, 0.5f, WhatIsPlayer);
-        for (int i = 0; i < MonsterHitBox1.Length; i++)
-        {
-            MonsterHitBox1[i].GetComponent<PlayerHealth>().TakeDamage(power);
-        }
-        for (int i = 0; i < MonsterHitBox2.Length; i++)
-        {
-            MonsterHitBox2[i].GetComponent<PlayerHealth>().TakeDamage(power);
-        }
-        yield return new WaitForSeconds(0.4f);
-        anim.SetBool("isSpell", false);
-        spellLeft.SetActive(false);
-        SpellRight.SetActive(false);
     }
 
     IEnumerator AtkTime()
