@@ -41,12 +41,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1561814895636853741}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f78c9801f20528f4ba308cfc400ec670, type: 3}
+  m_Script: {fileID: 11500000, guid: 039a61e41640c6b46b27832dc86bfb97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   contentList:
   - {fileID: 5413457928240118102, guid: 9ea4765a44be4f1408597ffae456b83a, type: 3}
   - {fileID: 7488254861520887833, guid: 3934b2c832e7dfd4395a26fa896b102c, type: 3}
+  bossRoom: {fileID: 7488254861520887833, guid: ee3de4130408519499f426ee157a1588, type: 3}
 --- !u!1 &7001947537586173690
 GameObject:
   m_ObjectHideFlags: 0
