@@ -76,7 +76,7 @@ public class Enemy : MonoBehaviour
         yield return new WaitForSeconds(0.70f);
         Destroy(enemy);
     }
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
