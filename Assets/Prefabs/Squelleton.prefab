@@ -41,7 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5194212975778747162}
   m_Layer: 0
-  m_Name: Bart
+  m_Name: Squelleton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
