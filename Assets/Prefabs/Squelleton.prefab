@@ -178,7 +178,6 @@ MonoBehaviour:
   TimeBetweenAttack: 2
   speed: 3
   strikeNoise: {fileID: 3240574556826527061}
-  deathnoise: {fileID: 3240574556826527061}
 --- !u!50 &5194212975799283601
 Rigidbody2D:
   serializedVersion: 4
@@ -228,7 +227,7 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!95 &5194212975799283603
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -245,7 +244,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!82 &3240574556826527061
 AudioSource:
   m_ObjectHideFlags: 0
