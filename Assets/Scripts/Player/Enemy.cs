@@ -41,8 +41,10 @@ public class Enemy : MonoBehaviour
         if (playersInRange.Length > 0) {
             if (playersInRange[0].transform.position.x > transform.position.x) {
                 transform.GetComponent<SpriteRenderer>().flipX = false;
+                attackPos.position = new Vector3(-1, 0, 0);
             } else {
                 transform.GetComponent<SpriteRenderer>().flipX = true;
+                attackPos.position = new Vector3(-1, 0, 0);
             }
             transform.position = Vector2.MoveTowards(transform.position, playersInRange[0].transform.position, speed * Time.deltaTime);
         }
@@ -61,8 +63,8 @@ public class Enemy : MonoBehaviour
         }
         if (isBoss)
         {
-            Collider2D[] playerInSpellRangeLeft = Physics2D.OverlapCircleAll(spellLeftPos.position, 0.5f, WhatIsPlayer);
-            Collider2D[] playerInSpellRangeRight = Physics2D.OverlapCircleAll(spellRightPos.position, 0.5f, WhatIsPlayer);
+            Collider2D[] playerInSpellRangeLeft = Physics2D.OverlapCircleAll(spellLeftPos.position, 1f, WhatIsPlayer);
+            Collider2D[] playerInSpellRangeRight = Physics2D.OverlapCircleAll(spellRightPos.position, 1f, WhatIsPlayer);
             if (playerInSpellRangeLeft.Length > 0 || playerInSpellRangeRight.Length > 0)
             {
                 if (attack == true)
@@ -86,11 +88,11 @@ public class Enemy : MonoBehaviour
         Collider2D[] MonsterHitBox2 = Physics2D.OverlapCircleAll(spellRightPos.position, 0.5f, WhatIsPlayer);
         for (int i = 0; i < MonsterHitBox1.Length; i++)
         {
-            MonsterHitBox1[i].GetComponent<PlayerHealth>().TakeDamage(power);
+            MonsterHitBox1[i].GetComponent<PlayerHealth>().TakeDamage(20);
         }
         for (int i = 0; i < MonsterHitBox2.Length; i++)
         {
-            MonsterHitBox2[i].GetComponent<PlayerHealth>().TakeDamage(power);
+            MonsterHitBox2[i].GetComponent<PlayerHealth>().TakeDamage(20);
         }
         yield return new WaitForSeconds(0.4f);
         anim.SetBool("isSpell", false);
