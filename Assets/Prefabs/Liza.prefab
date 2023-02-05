@@ -45,7 +45,6 @@ GameObject:
   - component: {fileID: 3848934555371011466}
   - component: {fileID: 3848934555371011461}
   - component: {fileID: 3848934555371011460}
-  - component: {fileID: 3848934555371011470}
   - component: {fileID: 6249749967459128907}
   - component: {fileID: 3848934554951149482}
   - component: {fileID: 3848934554951149458}
@@ -222,22 +221,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &3848934555371011470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3848934555371011463}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4ba35e5d68d1944be288b598e7e318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  waypointList:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!82 &6249749967459128907
 AudioSource:
   m_ObjectHideFlags: 0

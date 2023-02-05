@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7353a5b93b5b0d1499a8005ae60978be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 600
+  health: 150
   power: 10
   enemy: {fileID: 3184669877555420857}
   WhatIsPlayer:
@@ -330,7 +330,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3980898441516324954, guid: 91b17dc718573d74481a4b7fb5322c62, type: 2}
   m_audioClip: {fileID: 8300000, guid: cf5e426e64852c941804ee65ff8e0bad, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -426,7 +426,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3980898441516324954, guid: 91b17dc718573d74481a4b7fb5322c62, type: 2}
   m_audioClip: {fileID: 8300000, guid: db02a10b1363bff409ca63d6853c7f99, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

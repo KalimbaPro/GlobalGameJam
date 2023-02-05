@@ -46,7 +46,6 @@ GameObject:
   - component: {fileID: 5715695362226931155}
   - component: {fileID: 5715695362226931164}
   - component: {fileID: 5715695362226931165}
-  - component: {fileID: 5715695362226931159}
   - component: {fileID: 3207549507668946450}
   - component: {fileID: 6456096164969594139}
   - component: {fileID: 7511149478590980314}
@@ -223,22 +222,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
---- !u!114 &5715695362226931159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5715695362226931166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d4ba35e5d68d1944be288b598e7e318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  waypointList:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!82 &3207549507668946450
 AudioSource:
   m_ObjectHideFlags: 0
@@ -442,7 +425,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 3980898441516324954, guid: 91b17dc718573d74481a4b7fb5322c62, type: 2}
   m_audioClip: {fileID: 8300000, guid: e5e803f4bf601b1438cc95c683e2eff7, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

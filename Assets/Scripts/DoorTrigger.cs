@@ -18,8 +18,12 @@ public class DoorTrigger : MonoBehaviour
             doorClose.Play();
             spriteRenderer.sortingOrder = 6;
             isOpen = false;
-            var bossRoomPoint = GameObject.FindGameObjectsWithTag("BossSpwanPoint")[0].transform;
+            var bossRoomPoint = GameObject.FindGameObjectsWithTag("BossSpawnPoint")[0].transform;
             GameObject.FindGameObjectsWithTag("Player")[0].transform.position = bossRoomPoint.position;
+            var mainMusic = GameObject.FindGameObjectsWithTag("MainMusic")[0].GetComponent<AudioSource>();
+            mainMusic.Stop();
+            var bossMusic = GameObject.FindGameObjectsWithTag("BossMusic")[0].GetComponent<AudioSource>();
+            bossMusic.Play();
         }
     }
 
