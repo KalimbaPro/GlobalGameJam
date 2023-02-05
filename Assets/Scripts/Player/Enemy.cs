@@ -41,10 +41,10 @@ public class Enemy : MonoBehaviour
         if (playersInRange.Length > 0) {
             if (playersInRange[0].transform.position.x > transform.position.x) {
                 transform.GetComponent<SpriteRenderer>().flipX = false;
-                attackPos.position = new Vector3(-1, 0, 0);
+                attackPos.RotateAround(transform.position, Vector3.forward, 180);
             } else {
                 transform.GetComponent<SpriteRenderer>().flipX = true;
-                attackPos.position = new Vector3(-1, 0, 0);
+                attackPos.RotateAround(transform.position, Vector3.forward, 180);
             }
             transform.position = Vector2.MoveTowards(transform.position, playersInRange[0].transform.position, speed * Time.deltaTime);
         }
