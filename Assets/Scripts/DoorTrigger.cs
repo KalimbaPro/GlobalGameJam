@@ -6,6 +6,7 @@ public class DoorTrigger : MonoBehaviour
     public AudioSource doorClose;
     public GameObject canvasUI;
     public Animator animator;
+    public SpriteRenderer spriteRenderer;
     private bool isOpen = false;
 
     void Update()
@@ -15,6 +16,7 @@ public class DoorTrigger : MonoBehaviour
             animator.SetBool("IsOpen", false);
             canvasUI.SetActive(false);
             doorClose.Play();
+            spriteRenderer.sortingOrder = 6;
             isOpen = false;
         }
     }
