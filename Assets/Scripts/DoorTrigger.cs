@@ -18,6 +18,8 @@ public class DoorTrigger : MonoBehaviour
             doorClose.Play();
             spriteRenderer.sortingOrder = 6;
             isOpen = false;
+            var bossRoomPoint = GameObject.FindGameObjectsWithTag("BossSpwanPoint")[0].transform;
+            GameObject.FindGameObjectsWithTag("Player")[0].transform.position = bossRoomPoint.position;
         }
     }
 
